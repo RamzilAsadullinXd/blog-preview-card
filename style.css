@@ -1,0 +1,116 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+:root {
+    --white: #FFFFFF;
+    --black: #111111;
+    --yellow: #F4D04E;
+    --gray: #6B6B6B;
+    
+    --shadow: 0.5rem 0.5rem 0 0 var(--black);
+    --border: 1px solid var(--black);
+}
+
+@font-face {
+    font-family: 'Figtree';
+    src: url(./assets/fonts/static/Figtree-Medium.ttf) format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Figtree';
+    src: url(./assets/fonts/static/Figtree-ExtraBold.ttf) format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+body {
+    background-color: var(--yellow);
+    font-family: 'Figtree', sans-serif;
+    font-weight: 500;
+    font-size: clamp(0.875rem, 2vw, 1rem);
+    line-height: 1.5;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.5rem;
+    width: 24rem;
+    padding: 1.5rem;
+    border-radius: 1.25rem;
+    color: var(--black);
+    background-color: var(--white);
+    border: var(--border);
+    box-shadow: var(--shadow);
+}
+
+@media (max-width: 48rem) {
+    .card {
+        width: 20.438rem;
+    }
+
+    .card__img {
+        width: 17.438rem;
+        height: 12.5rem;
+    }
+}
+
+.card__content {
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.75rem;
+}
+
+.card__category {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 5.125rem;
+    height: 1.813rem;
+    background-color: var(--yellow);
+    font-weight: 800;
+}
+
+.card__publish-date {
+    font-size: 0.875rem;
+    font-size: clamp(0.75rem, 2vw, 0.875rem);
+}
+
+.card__title {
+    font-size: clamp(1.25rem, 2vw, 1.5rem);
+    font-weight: 800;
+    transition-duration: 0.2s;
+}
+
+.card__title:hover {
+    color: var(--yellow);
+}
+
+.card__description {
+    max-width: 21rem;
+    color: var(--gray);
+}
+
+.card__after {
+    display: flex;
+    align-items: center;
+    column-gap: 0.75rem;
+    font-weight: 800;
+}
